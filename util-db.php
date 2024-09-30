@@ -1,12 +1,18 @@
 <?php
-function get_db_connection(){
+function getConnection() {
+    $servername = "mis4013db"; // e.g., "localhost" or your Azure MySQL server
+    $username = "lylykimwin";           // Your database username
+    $password = "UN113498602!";            // Your database password
+    $dbname = "lyly azure db";         // Your database name
+
     // Create connection
-    $conn = new mysqli('20.48.202.167', 'lylykimwin', 'UN113498602!', 'mis4013db');
-    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
     // Check connection
     if ($conn->connect_error) {
-      return false;
+        die("Connection failed: " . $conn->connect_error);
     }
-    return $conn;
+
+    return $conn; // Return the connection object
 }
 ?>
