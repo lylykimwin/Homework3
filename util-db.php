@@ -1,6 +1,6 @@
 <?php
 function getConnection() {
-    $servername = "127.0.0.1"; // e.g., "localhost" or your Azure MySQL server
+    $servername = "mis4013db.mysql.database.azure.com:3306"; // e.g., "localhost" or your Azure MySQL server
     $username = "lylykimwin";           // Your database username
     $password = "UN113498602!";            // Your database password
     $dbname = "lyly azure db";         // Your database name
