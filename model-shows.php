@@ -1,9 +1,9 @@
 <?php
 require_once("util-db.php");
 
-function selectCasts() {
+function selectShows() {
     $conn = getConnection(); // Get the database connection
-    $sql = "SELECT cast_id, cast_name FROM casts"; // Your SQL query
+    $sql = "SELECT show_id, title, release_year FROM shows"; // Your SQL query
     $result = $conn->query($sql);
 
     // Check if query was successful
@@ -12,14 +12,14 @@ function selectCasts() {
         return []; // Return an empty array on error
     }
 
-    $casts = []; // Initialize an array for casts
+    $shows = []; // Initialize an array for shows
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $casts[] = $row; // Add each row to the casts array
+            $shows[] = $row; // Add each row to the shows array
         }
     }
 
     $conn->close(); // Close the database connection
-    return $casts; // Return the casts array
+    return $shows; // Return the shows array
 }
 ?>
