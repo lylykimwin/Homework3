@@ -3,17 +3,18 @@
   <table class="table">
     <thead>
       <tr>
-      <th>ID</th>
-      <th>Name</th>        
+        <th>ID</th>
+        <th>Name</th>        
       </tr>
-    <thead>
+    </thead>
     <tbody>
 <?php
-while($Director = $directors->fetch_assoc()) {
+// Loop through the directors array
+foreach ($directors as $director) {
 ?>
   <tr>
-    <td><?php echo $director['director_id']; ?></td>
-    <td><?php echo $director['director_name']; ?></td>
+    <td><?php echo htmlspecialchars($director['director_id']); ?></td>
+    <td><?php echo htmlspecialchars($director['director_name']); ?></td>
   </tr>
 <?php 
 }
