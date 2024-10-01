@@ -1,6 +1,3 @@
-view directors php
-
-
 <h1>Directors</h1>
 <div class="table-responsive">
   <table class="table">
