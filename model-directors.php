@@ -10,7 +10,7 @@ function selectDirectors() {
     }
 
     // Prepare and execute the SQL query
-    $sql = "SELECT director_id, director_name FROM directors";
+    $sql = "SELECT director_id, director_name FROM director";
     $result = $conn->query($sql);
 
     $directors = [];
