@@ -1,4 +1,3 @@
-
 <h1>Directors with Shows</h1>
 
 <div class="card-group">
@@ -12,10 +11,10 @@ foreach ($directors as $director) {
       <p class="card-text">
       <ul class="list-group">
 <?php
-  $shows = selectShowsByDirector($director['director_id']);
-  while ($show = $shows->fetch_assoc()) {
+  $shows = selectShowsByDirector($director['director_id']); 
+  foreach ($shows as $show) {
 ?> 
-    <li class="list-group-item"><?php echo htmlspecialchars($show['show_id']); ?> - <?php echo htmlspecialchars($show['title']); ?> - <?php echo htmlspecialchars($show['release_year']); ?> </li>
+    <li class="list-group-item"><?php echo htmlspecialchars($show['show_id']); ?> - <?php echo htmlspecialchars($show['title']); ?> - <?php echo htmlspecialchars($show['release_year']); ?></li>
 <?php
   }
 ?>
