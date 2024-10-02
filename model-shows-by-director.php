@@ -2,10 +2,10 @@
 require_once("util-db.php");
 
 function selectShowsByDirector($did) {
-    $conn = get_db_connection(); // Use get_db_connection() to get the database connection
+    $conn = get_db_connection();
     if (!$conn) {
         error_log("Failed to connect to the database.");
-        return []; // Return an empty array if the connection fails
+        return []; 
     }
 
 $sql = "
@@ -16,33 +16,28 @@ WHERE s.director_id = ?
 ";
 
 
-    // Prepare the statement
     $stmt = $conn->prepare($sql);
-    
-    // Check if the preparation was successful
+
     if (!$stmt) {
-        error_log("SQL Prepare Error: " . $conn->error); // Log SQL error
-        return []; // Return an empty array on error
+        error_log("SQL Prepare Error: " . $conn->error); 
+        return []; 
     }
 
-    // Bind parameters
-    $stmt->bind_param("i", $did); // Assuming $did is an integer (director ID)
+    $stmt->bind_param("i", $did); 
 
-    // Execute the statement
     $stmt->execute();
 
-    // Get the result
     $result = $stmt->get_result();
 
-    $shows = []; // Initialize an array for shows
+    $shows = []; 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $shows[] = $row; // Add each row to the shows array
+            $shows[] = $row; 
         }
     }
 
-    $stmt->close(); // Close the prepared statement
-    $conn->close(); // Close the database connection
-    return $shows; // Return the shows array
+    $stmt->close();
+    $conn->close(); 
+    return $shows; 
 }
 ?>
