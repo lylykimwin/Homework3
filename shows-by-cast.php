@@ -16,6 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['show_id'])) {
     die("No show ID provided.");
 }
 
-include "view-shows-by-cast.php";
+include "view-show-by-cast.php";
 include "view-footer.php"; // Include the view for casts
 ?>
