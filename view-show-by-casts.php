@@ -1,4 +1,4 @@
-<h1>Cast for <?php echo htmlspecialchars($show['title']); ?></h1>
+<h1>Cast for <?php echo htmlspecialchars($show['title']); ?></h1> <!-- You can comment this out if not fetching show details -->
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -9,7 +9,6 @@
     </thead>
     <tbody>
 <?php
-// Loop through the casts for the specific show
 foreach ($casts as $index => $cast) {
 ?>
   <tr>
