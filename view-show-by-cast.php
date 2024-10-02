@@ -9,7 +9,7 @@
     </thead>
     <tbody>
 <?php
-foreach ($casts as $index => $cast) {
+foreach ($casts as $cast) {
 ?>
   <tr>
     <td><?php echo htmlspecialchars($show['title']); ?></td>
