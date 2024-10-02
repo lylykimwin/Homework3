@@ -12,7 +12,7 @@
 foreach ($casts as $index => $cast) {
 ?>
   <tr>
-    <td><?php echo htmlspecialchars($cast['show_id']; ?></td>
+    <td><?php echo htmlspecialchars($cast['show_id']); ?></td>
     <td><?php echo htmlspecialchars($cast['cast_name']); ?></td>
   </tr>
 <?php 
