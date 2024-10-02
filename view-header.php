@@ -23,7 +23,7 @@
                 <a class="nav-link" href="directors.php">Directors</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="shows-titles.php">Shows</a>
+                <a class="nav-link" href="shows.php">Shows</a>
               </li>       
               <li class="nav-item">
                 <a class="nav-link" href="direc_shows.php">Directors of Shows</a>
