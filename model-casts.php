@@ -1,3 +1,6 @@
+<?php
+require_once("util-db.php");
+
 function selectCastsByShow($show_id) {
     $conn = get_db_connection();
     if (!$conn) {
@@ -22,3 +25,4 @@ function selectCastsByShow($show_id) {
 
     return $casts;
 }
+?>
