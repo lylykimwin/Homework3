@@ -2,14 +2,13 @@
 require_once("util-db.php");
 
 function selectDirectors() {
-    // Get the database connection
+  
     $conn = get_db_connection();
 
     if (!$conn) {
         die("Database connection failed.");
     }
 
-    // Prepare and execute the SQL query
     $sql = "SELECT director_id, director_name FROM director";
     $result = $conn->query($sql);
 
@@ -21,7 +20,6 @@ function selectDirectors() {
         }
     }
 
-    // Close the result set and the connection
     if ($result) {
         $result->close();
     }
