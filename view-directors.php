@@ -4,7 +4,8 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th>Name</th>        
+        <th>Name</th> 
+          <th></th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@ foreach ($directors as $director) {
   <tr>
     <td><?php echo htmlspecialchars($director['director_id']); ?></td>
     <td><?php echo htmlspecialchars($director['director_name']); ?></td>
+    <td><a  href ="shows-by-directors.php?id=<?php echo htmlspecialchars($director['director_id']); ?>">Shows</a></td>
   </tr>
 <?php 
 }
