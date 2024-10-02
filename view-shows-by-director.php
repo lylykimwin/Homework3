@@ -7,7 +7,7 @@
         <th>ID</th>
         <th>Title</th>    
         <th>Release Year</th>
-        <th>Cast</th>
+
       </tr>
     </thead>
     <tbody>
