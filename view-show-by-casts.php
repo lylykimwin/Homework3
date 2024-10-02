@@ -1,4 +1,4 @@
-<h1>Cast for Show></h1>
+<h1>Show Cast></h1>
 <div class="table-responsive">
   <table class="table">
     <thead>
