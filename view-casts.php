@@ -7,11 +7,15 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($casts as $cast): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($cast['cast_name']); ?></td>
-            </tr>
-            <?php endforeach; ?>
+            <?php
+            if (!empty($casts)) {
+                foreach ($casts as $cast) {
+                    echo "<tr><td>" . htmlspecialchars($cast['cast_name']) . "</td></tr>";
+                }
+            } else {
+                echo "<tr><td>No cast found for this show.</td></tr>";
+            }
+            ?>
         </tbody>
     </table>
 </div>
