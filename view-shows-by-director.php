@@ -19,7 +19,7 @@ foreach ($shows as $show) {
     <td><?php echo htmlspecialchars($show['show_id']); ?></td>
     <td><?php echo htmlspecialchars($show['title']); ?></td>
    <td><?php echo htmlspecialchars($show['release_year']); ?></td>
-     <td><?php echo htmlspecialchars($show['cast_name']); ?></td>
+
   </tr>
 <?php 
 }
