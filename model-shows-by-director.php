@@ -8,10 +8,8 @@ function selectShowsByDirector($did) {
         return []; // Return an empty array if the connection fails
     }
 
-    $sql = "SELECT s.show_id, s.title, s.release_year 
-            FROM shows s
-            JOIN shows_directors sd ON s.show_id = sd.show_id
-            WHERE sd.director_id = ?"; // Change this to the correct column if needed
+   $sql = "SELECT show_id, title, release_year FROM shows WHERE director_id = ?";
+
 
     // Prepare the statement
     $stmt = $conn->prepare($sql);
