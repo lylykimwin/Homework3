@@ -2,7 +2,12 @@
 require_once("util-db.php");
 
 function selectShows() {
-    $conn = getConnection(); // Get the database connection
+    $conn = get_db_connection(); // Use get_db_connection() to get the database connection
+    if (!$conn) {
+        error_log("Failed to connect to the database.");
+        return []; // Return an empty array if the connection fails
+    }
+
     $sql = "SELECT show_id, title, release_year FROM shows"; // Your SQL query
     $result = $conn->query($sql);
 
