@@ -1,3 +1,4 @@
+<?php
 function selectShowsByDirector($did) {
     $conn = get_db_connection(); 
     if (!$conn) {
@@ -35,3 +36,4 @@ function selectShowsByDirector($did) {
     $conn->close(); 
     return $shows;
 }
+?>
