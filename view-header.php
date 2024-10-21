@@ -24,7 +24,10 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="shows.php">Shows</a>
-              </li>       
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="casts.php">Cast</a>
+              </li> 
               <li class="nav-item">
                 <a class="nav-link" href="direc-shows.php">Directors of Shows</a>
               </li>      
