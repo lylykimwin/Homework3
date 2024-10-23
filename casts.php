@@ -10,7 +10,7 @@ require_once("model-casts.php");
 $pageTitle = "Cast"; // Set the page title
 include "view-header.php"; // Include the header file
 
-$shows = selectCasts(); // Fetch directors from the database
+$casts = selectCasts(); // Fetch directors from the database
 include "view-casts.php"; // Include the view file to display directors
 include "view-footer.php"; // Include the footer file
 ?>
