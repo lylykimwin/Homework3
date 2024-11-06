@@ -14,3 +14,7 @@ $directors = selectDirectors();
 include "view-directors.php";
 include "view-footer.php";
 ?>
+
+<script src="scripts.js"></script> <!-- Replace 'path/to/' with the actual path -->
+</body>
+</html>
