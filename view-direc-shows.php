@@ -32,3 +32,7 @@
     <?php } ?>
   </div>
 </div>
+
+<script src="scripts.js"></script> <!-- Replace 'path/to/' with the actual path -->
+</body>
+</html>
