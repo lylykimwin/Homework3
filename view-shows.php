@@ -6,17 +6,18 @@
         <th>ID</th>
         <th>Title</th>
         <th>Release Year</th>
-        <th>Actions</th> <!-- Edit/Delete actions -->
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <?php foreach ($shows as $show) { ?>
-        <tr>
+        <tr id="show-<?php echo $show['show_id']; ?>" 
+            onmouseover="addHoverEffect(<?php echo $show['show_id']; ?>)" 
+            onmouseout="removeHoverEffect(<?php echo $show['show_id']; ?>)">
           <td><?php echo htmlspecialchars($show['show_id']); ?></td>
           <td><?php echo htmlspecialchars($show['title']); ?></td>
           <td><?php echo htmlspecialchars($show['release_year']); ?></td>
           <td>
-              
             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editShowModal<?php echo $show['show_id']; ?>">Edit</button>
 
             <form method="POST" action="delete_show.php" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this show?');">
@@ -57,6 +58,7 @@
     </tbody>
   </table>
 </div>
+
 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addShowModal">
   Add Show
