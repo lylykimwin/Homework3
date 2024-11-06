@@ -94,6 +94,6 @@
   </div>
 </div>
 
-<script src="scripts.js"></script> <!-- Replace 'path/to/' with the actual path -->
+<script src="scripts.js"></script>
 </body>
 </html>
