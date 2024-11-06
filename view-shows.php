@@ -1,4 +1,7 @@
 <h1>Shows</h1>
+
+<button onclick="sortShowsByYear()" class="btn btn-secondary mb-3">Sort by Release Year</button>
+
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -9,9 +12,11 @@
         <th>Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <!-- Add an ID to the tbody for JavaScript targeting -->
+    <tbody id="shows-container">
       <?php foreach ($shows as $show) { ?>
         <tr id="show-<?php echo $show['show_id']; ?>" 
+            data-year="<?php echo htmlspecialchars($show['release_year']); ?>"
             onmouseover="addHoverEffect(<?php echo $show['show_id']; ?>)" 
             onmouseout="removeHoverEffect(<?php echo $show['show_id']; ?>)">
           <td><?php echo htmlspecialchars($show['show_id']); ?></td>
@@ -27,6 +32,7 @@
           </td>
         </tr>
 
+        <!-- Edit Show Modal -->
         <div class="modal fade" id="editShowModal<?php echo $show['show_id']; ?>" tabindex="-1" aria-labelledby="editShowLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -59,11 +65,8 @@
   </table>
 </div>
 
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addShowModal">
-  Add Show
-</button>
-
+<!-- Button and Modal for Adding a New Show -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addShowModal">Add Show</button>
 <div class="modal fade" id="addShowModal" tabindex="-1" aria-labelledby="addShowLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
