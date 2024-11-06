@@ -5,8 +5,12 @@ function toggleDirectorDetails(directorId) {
 
 function addHoverEffect(showId) {
     const show = document.getElementById(`show-${showId}`);
-    show.onmouseover = () => { show.style.backgroundColor = "#f0f8ff"; };
-    show.onmouseout = () => { show.style.backgroundColor = ""; };
+    show.style.backgroundColor = "#f0f8ff"; // Light blue background on hover
+}
+
+function removeHoverEffect(showId) {
+    const show = document.getElementById(`show-${showId}`);
+    show.style.backgroundColor = ""; // Reset to default background
 }
 
 function validateShowForm() {
