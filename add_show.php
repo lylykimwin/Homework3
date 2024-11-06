@@ -56,6 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 
-<script src="scripts.js"></script> <!-- Replace 'path/to/' with the actual path -->
+<script src="scripts.js"></script>
 </body>
 </html>
