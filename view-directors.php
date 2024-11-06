@@ -14,16 +14,19 @@
         <td><?php echo htmlspecialchars($director['director_id']); ?></td>
         <td><?php echo htmlspecialchars($director['director_name']); ?></td>
         <td>
-
+          <!-- Edit Button -->
           <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editDirectorModal<?php echo $director['director_id']; ?>">Edit</button>
 
-          <form method="POST" action="delete_director.php" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this director?');">
+          <!-- Delete Form with custom confirmation -->
+          <form method="POST" action="delete_director.php" style="display:inline;" 
+                onsubmit="return confirmDirectorDeletion('<?php echo htmlspecialchars($director['director_name']); ?>');">
             <input type="hidden" name="director_id" value="<?php echo $director['director_id']; ?>">
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
         </td>
       </tr>
 
+      <!-- Edit Director Modal -->
       <div class="modal fade" id="editDirectorModal<?php echo $director['director_id']; ?>" tabindex="-1" aria-labelledby="editDirectorLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
