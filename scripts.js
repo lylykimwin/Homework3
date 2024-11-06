@@ -1,6 +1,8 @@
 function toggleDirectorDetails(directorId) {
     const details = document.getElementById(`details-${directorId}`);
-    details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    if (details) { // Check if element exists
+        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    }
 }
 
 function addHoverEffect(showId) {
