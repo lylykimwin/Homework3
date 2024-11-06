@@ -25,12 +25,15 @@ function validateShowForm() {
 
 function sortShowsByYear() {
     const showsContainer = document.getElementById("shows-container");
+    if (!showsContainer) return; // Check if container exists
+
     const shows = Array.from(showsContainer.children);
     shows.sort((a, b) => {
         const yearA = parseInt(a.dataset.year);
         const yearB = parseInt(b.dataset.year);
         return yearA - yearB;
     });
+
     showsContainer.innerHTML = '';
     shows.forEach(show => showsContainer.appendChild(show));
 }
