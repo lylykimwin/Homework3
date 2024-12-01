@@ -11,12 +11,11 @@ function selectGenres() {
         SELECT 
             g.genre_id, 
             g.genre_name, 
-            g.show_id, 
             COUNT(s.show_id) AS num_shows, 
             s.title AS show_title
         FROM genres g
-        LEFT JOIN shows s ON g.genre_id = s.genre_id
-        GROUP BY g.genre_id, g.genre_name, g.show_id, s.title
+        LEFT JOIN shows s ON g.show_id = s.show_id
+        GROUP BY g.genre_id, g.genre_name, s.title;
     ";
     $result = $conn->query($sql);
 
