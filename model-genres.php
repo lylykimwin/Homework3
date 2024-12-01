@@ -8,9 +8,15 @@ function selectGenres() {
     }
 
     $sql = "
-        SELECT g.genre_id, g.genre_name, g.show_id, s.title AS show_title
+        SELECT 
+            g.genre_id, 
+            g.genre_name, 
+            g.show_id, 
+            COUNT(s.show_id) AS num_shows, 
+            s.title AS show_title
         FROM genres g
-        JOIN shows s ON g.show_id = s.show_id
+        LEFT JOIN shows s ON g.genre_id = s.genre_id
+        GROUP BY g.genre_id, g.genre_name, g.show_id, s.title
     ";
     $result = $conn->query($sql);
 
@@ -30,4 +36,3 @@ function selectGenres() {
 
     return $genres;
 }
-?>
